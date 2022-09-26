@@ -13,9 +13,11 @@ streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
 # Let's put a pick list here so they can pick the fruit they want to include 
 my_fruit_list = my_fruit_list.set_index('Fruit')
-streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
 
+#streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
 # streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index), ["Apple","Avocado"])
 # Előre kijelölt elemeket tartalmaz, mint Apple és Avocado
+# streamlit.dataframe(my_fruit_list)
 
-streamlit.dataframe(my_fruit_list)
+fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
+fruits_to_show = my_fruit_list.loc[fruits_selected]

@@ -15,4 +15,7 @@ streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 my_fruit_list = my_fruit_list.set_index('Fruit')
 streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
 
+# streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index), ["Apple","Avocado"])
+# Előre kijelölt elemeket tartalmaz, mint Apple és Avocado
+
 streamlit.dataframe(my_fruit_list)

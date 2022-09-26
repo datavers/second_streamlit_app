@@ -1,3 +1,4 @@
 import streamlit
 
-streamlit.title('MagosVölgy')
+streamlit.title('Healthy something')
+streamlit.text('Következő szöveg')

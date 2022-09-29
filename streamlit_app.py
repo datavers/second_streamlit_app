@@ -28,6 +28,6 @@ streamlit.dataframe(fruits_to_show)
 
 streamlit.header("Fruityvice Fruit Advice!")
 # normalized version of the json file
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # draw the table
 streamlit.dataframe(fruityvice_normalized)

@@ -48,7 +48,7 @@ except URLError as e:
 add_my_fruit = streamlit.text_input('What fruit would you like to add', 'jackfruit')
 # Ez nem működik így: streamlit.text('Thanks for adding ', add_my_fuit)
 
-streamlit.header("The fruit load list:")
+streamlit.header("View Our Fruit List - Add your Favorites:")
 #Snowflake related functions
 def get_fruit_load_list():
     with my_cnx.cursor() as my_cur:
@@ -59,6 +59,7 @@ def get_fruit_load_list():
 if streamlit.button('Get Fruit Load list'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
     my_data_rows = get_fruit_load_list()
+    my_cnx.close()
     streamlit.dataframe(my_data_rows)
 
 # my_data_row = my_cur.fetchone()
